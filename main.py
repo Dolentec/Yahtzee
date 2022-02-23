@@ -1,7 +1,4 @@
-from pickle import FALSE
-from pickletools import read_unicodestring1
 import random
-from re import X
 # Hier word een module ge-inporteerd waarmee je makkelijk random getallen kan genereren.
 
 import sys, os
@@ -88,7 +85,7 @@ while houden == "nee":
 
     beurt = beurt + 1
 
-    if beurt == 3:
+    if beurt == 2:
         houden = "ja"
     else:
         houden = input("Wil je je dobbelstenen houden? Voer ja of nee in. ")
@@ -101,19 +98,45 @@ while houden == "nee":
     print(" ")
 
 if currentDobbelstenen.count("1️⃣") == 3 or currentDobbelstenen.count("2️⃣") == 3 or currentDobbelstenen.count("3️⃣") == 3 or currentDobbelstenen.count("4️⃣") == 3 or currentDobbelstenen.count("5️⃣") == 3 or currentDobbelstenen.count("6️⃣") == 3:
-    print("Three of a kind is found!")
+    threeOfAKind = True
+else: threeOfAKind = False
 
 if currentDobbelstenen.count("1️⃣") == 4 or currentDobbelstenen.count("2️⃣") == 4 or currentDobbelstenen.count("3️⃣") == 4 or currentDobbelstenen.count("4️⃣") == 4 or currentDobbelstenen.count("5️⃣") == 4 or currentDobbelstenen.count("6️⃣") == 4:
-    print("Four of a kind is found!")
+    fourOfAKind = True
+else: fourOfAKind = False
 
 if currentDobbelstenen.count("1️⃣") == 5 or currentDobbelstenen.count("2️⃣") == 5 or currentDobbelstenen.count("3️⃣") == 5 or currentDobbelstenen.count("4️⃣") == 5 or currentDobbelstenen.count("5️⃣") == 5 or currentDobbelstenen.count("6️⃣") == 5:
-    print("Yahtzee of a kind is found!")
+    Yahtzee = True
+else: Yahtzee = False
 
-if '1️⃣' and '2️⃣' and '3️⃣' and '4️⃣' in currentDobbelstenen:
-    print("Small House is found!")
+if ('1️⃣' and '2️⃣' and '3️⃣' and '4️⃣') or ('2️⃣' and '3️⃣' and '4️⃣' and '5️⃣') in currentDobbelstenen:
+    smallStreet = True
+else: smallStreet = False
 
 if '1️⃣' and '2️⃣' and '3️⃣' and '4️⃣' and '5️⃣' in currentDobbelstenen:
-    print("Small House is found!")
+    bigStreet = True
+else: bigStreet = False
 
-if (currentDobbelstenen.count("1️⃣") == 2 or currentDobbelstenen.count("2️⃣") == 2 or currentDobbelstenen.count("3️⃣") == 2 or currentDobbelstenen.count("4️⃣") == 2 or currentDobbelstenen.count("5️⃣") == 2 or currentDobbelstenen.count("6️⃣") == 2) and (currentDobbelstenen.count("1️⃣") == 4 or currentDobbelstenen.count("2️⃣") == 4 or currentDobbelstenen.count("3️⃣") == 4 or currentDobbelstenen.count("4️⃣") == 4 or currentDobbelstenen.count("5️⃣") == 4 or currentDobbelstenen.count("6️⃣") == 4):
-    print("Three of a kind is found!")
+if (currentDobbelstenen.count("1️⃣") == 2 or currentDobbelstenen.count("2️⃣") == 2 or currentDobbelstenen.count("3️⃣") == 2 or currentDobbelstenen.count("4️⃣") == 2 or currentDobbelstenen.count("5️⃣") == 2 or currentDobbelstenen.count("6️⃣") == 2) and (currentDobbelstenen.count("1️⃣") == 3 or currentDobbelstenen.count("2️⃣") == 3 or currentDobbelstenen.count("3️⃣") ==3 or currentDobbelstenen.count("4️⃣") == 3 or currentDobbelstenen.count("5️⃣") == 3 or currentDobbelstenen.count("6️⃣") == 3):
+    fullHouse = True
+else: fullHouse = False
+
+
+
+if (threeOfAKind == True and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
+    print("You Have Three of a kind!")
+
+if (threeOfAKind == False and fourOfAKind == True and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
+    print("You Have Four of a kind!")
+
+if (threeOfAKind == False and fourOfAKind == False and Yahtzee == True and smallStreet == False and bigStreet == False and fullHouse == False):
+    print("You Have Yahtzee!")
+
+if (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == True and bigStreet == False and fullHouse == False):
+    print("You Have Small Street!")
+
+if (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == True and fullHouse == False):
+    print("You Have Big Street!")
+
+if (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == True):
+    print("You Have Full House!")
