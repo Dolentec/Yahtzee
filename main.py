@@ -1,27 +1,18 @@
 import random
-# Hier word een module ge-inporteerd waarmee je makkelijk random getallen kan genereren.
+# Random gets inported here.
 
 import sys, os
-# Hier word os ge-inporteerd zodat je de command-line kan leegmaken.
+# System gets inported here.
 
 import time
-# Hier word time ge-inporteerd zodat je python kan laten wachten.
-
-from collections import Counter
-# Hier word Counter ge-inporteerd
+# Time gets imported here.
 
 os.system('cls')
-
-print("-----------------------")
-
-naam = input("wat is je naam? ")
-
-os.system('cls')
-# hier word het scherm leeg gemaakt
+# The console gets cleared.
 
 print("------------------------------------------------------------------------------------------")
 print(" ")
-print("Hallo " + naam + ", welkom bij Yahtzee.")
+print("Hallo, welkom bij Yahtzee.")
 print("Het doel is om een zo hoog mogelijke score te krijgen door bepaalde patronen of volgorde's te gooien")
 print("Wanneer je de dobbelstenen gooit kan je kiezen of je ze wilt houden of sommige dobbelstenen opnieuw wilt gooien")
 print("Per Beurt mag je maximaal drie keer gooien.")
@@ -29,12 +20,16 @@ print("(Gemaakt door Niels van Rheenen, V4D, Het Streek Lyceum.)")
 print(" ")
 print("------------------------------------------------------------------------------------------")
 print(" ")
+# Printing the explaination and rules of the game.
 
 time.sleep(5)
+# Wating five seconds.
 
 os.system('cls')
+# Clearing the console
 
 dobbelStenen = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣"]
+# Making a list with all the dices.
 
 rnd1 = random.choice(dobbelStenen)
 rnd2 = random.choice(dobbelStenen)
@@ -43,12 +38,14 @@ rnd4 = random.choice(dobbelStenen)
 rnd5 = random.choice(dobbelStenen)
 
 currentDobbelstenen = [rnd1, rnd2, rnd3, rnd4, rnd5]
+# Picking random dices from the list and putting the five random dices in a new list.
 
 print("------------------------------------------------------------------------------------------")
 print("Dit zijn je eerste dobbelstenen:")
 print(currentDobbelstenen)
 print("------------------------------------------------------------------------------------------")
 print(" ")
+# Printing the random dices.
 
 houden = input("Wil je je dobbelstenen houden? Voer ja of nee in. ")
 
@@ -109,11 +106,11 @@ if currentDobbelstenen.count("1️⃣") == 5 or currentDobbelstenen.count("2️�
     Yahtzee = True
 else: Yahtzee = False
 
-if ('1️⃣' and '2️⃣' and '3️⃣' and '4️⃣') or ('2️⃣' and '3️⃣' and '4️⃣' and '5️⃣') in currentDobbelstenen:
+if ('1️⃣' and '2️⃣' and '3️⃣' and '4️⃣') or ('2️⃣' and '3️⃣' and '4️⃣' and '5️⃣') or ('3️⃣' or'4️⃣' and '5️⃣' and '6️⃣') in currentDobbelstenen:
     smallStreet = True
 else: smallStreet = False
 
-if '1️⃣' and '2️⃣' and '3️⃣' and '4️⃣' and '5️⃣' in currentDobbelstenen:
+if ('1️⃣' and '2️⃣' and '3️⃣' and '4️⃣' and '5️⃣') or ('2️⃣' and '3️⃣' and '4️⃣' and '5️⃣' and '6️⃣') in currentDobbelstenen:
     bigStreet = True
 else: bigStreet = False
 
@@ -122,21 +119,17 @@ if (currentDobbelstenen.count("1️⃣") == 2 or currentDobbelstenen.count("2️
 else: fullHouse = False
 
 
-
 if (threeOfAKind == True and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
     print("You Have Three of a kind!")
-
-if (threeOfAKind == False and fourOfAKind == True and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
+elif (threeOfAKind == False and fourOfAKind == True and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
     print("You Have Four of a kind!")
-
-if (threeOfAKind == False and fourOfAKind == False and Yahtzee == True and smallStreet == False and bigStreet == False and fullHouse == False):
+elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == True and smallStreet == False and bigStreet == False and fullHouse == False):
     print("You Have Yahtzee!")
-
-if (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == True and bigStreet == False and fullHouse == False):
+elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == True and bigStreet == False and fullHouse == False):
     print("You Have Small Street!")
-
-if (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == True and fullHouse == False):
+elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == True and fullHouse == False):
     print("You Have Big Street!")
-
-if (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == True):
+elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == True):
     print("You Have Full House!")
+else:
+    print("You have no results.")
