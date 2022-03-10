@@ -107,25 +107,25 @@ while hold == "no":
 
 if currentDices.count('1️⃣') == 3 or currentDices.count('2️⃣') == 3 or currentDices.count('3️⃣') == 3 or currentDices.count('4️⃣') == 3 or currentDices.count('5️⃣') == 3 or currentDices.count('6️⃣') == 3:
     threeOfAKind = True
-    print("three of a kind")
+    print("You Have Three of a kind!")
 else: threeOfAKind = False
 # Checking for three of a kind
 
 if currentDices.count("1️⃣") == 4 or currentDices.count("2️⃣") == 4 or currentDices.count("3️⃣") == 4 or currentDices.count("4️⃣") == 4 or currentDices.count("5️⃣") == 4 or currentDices.count("6️⃣") == 4:
     fourOfAKind = True
-    print("four of a kind")
+    print("You Have Four of a kind!")
 else: fourOfAKind = False
 # Checking for four of a kind
 
 if currentDices.count("1️⃣") == 5 or currentDices.count("2️⃣") == 5 or currentDices.count("3️⃣") == 5 or currentDices.count("4️⃣") == 5 or currentDices.count("5️⃣") == 5 or currentDices.count("6️⃣") == 5:
     Yahtzee = True
-    print("yahtzee")
+    print("You Have Yahtzee!")
 else: Yahtzee = False
 # Checking for yahtzee
 
 if ('1️⃣' and '2️⃣' and '3️⃣' and '4️⃣') or ('2️⃣' and '3️⃣' and '4️⃣' and '5️⃣') or ('3️⃣' or'4️⃣' and '5️⃣' and '6️⃣') in currentDices:
     smallStreet = True
-    print("small street")
+    print("You Have Small Street!")
 else: smallStreet = False
 # Checking for small street
 
@@ -134,29 +134,12 @@ bigStreetList2 = ['2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣']
 
 if bigStreetList1 == currentDices or bigStreetList2 == currentDices:
     bigStreet = True
-    print("big street")
+    print("You Have Big Street!")
 else: bigStreet = False
 # Checking for big street
 
 if (currentDices.count("1️⃣") == 2 or currentDices.count("2️⃣") == 2 or currentDices.count("3️⃣") == 2 or currentDices.count("4️⃣") == 2 or currentDices.count("5️⃣") == 2 or currentDices.count("6️⃣") == 2) and (currentDices.count("1️⃣") == 3 or currentDices.count("2️⃣") == 3 or currentDices.count("3️⃣") ==3 or currentDices.count("4️⃣") == 3 or currentDices.count("5️⃣") == 3 or currentDices.count("6️⃣") == 3):
     fullHouse = True
-    print("full house")
+    print("You Have Full House!")
 else: fullHouse = False
 # Checking for full house
-
-
-if (threeOfAKind == True and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
-    print("You Have Three of a kind!")
-elif (threeOfAKind == False and fourOfAKind == True and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == False):
-    print("You Have Four of a kind!")
-elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == True and smallStreet == False and bigStreet == False and fullHouse == False):
-    print("You Have Yahtzee!")
-elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == True and bigStreet == False and fullHouse == False):
-    print("You Have Small Street!")
-elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == True and fullHouse == False):
-    print("You Have Big Street!")
-elif (threeOfAKind == False and fourOfAKind == False and Yahtzee == False and smallStreet == False and bigStreet == False and fullHouse == True):
-    print("You Have Full House!")
-else:
-    print("You have no results.")
-# Printing all of the results if they are found.
