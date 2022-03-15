@@ -1,3 +1,17 @@
+##########################################################################
+# Author        : Niels van Rheenen
+# Goal           : This program can be used to play a simple version of yahtzee.
+# Date / version : v0.1.3
+#
+# Input          : If you want to keep your dices (yes or no) and then wich dices you want to keep.
+# Output         : The random dices, and the swapped dices based on the input of the user
+# Used Calculations random
+#
+# Imported Python modules: System, Random, time, Counter.
+# Other Notes : -
+#
+##########################################################################
+
 import random
 # Random gets inported here.
 
@@ -15,7 +29,7 @@ os.system('cls')
 print("------------------------------------------------------------------------------------------")
 print(" ")
 print("Hello, welcome to Yahtzee.")
-print("The goal is to have score the highest score possible, by havinbg certain paterns or orders with your dices.")
+print("The goal is to have score the highest score possible, by having certain paterns or orders with your dices.")
 print("When you trow the dices you can choose to keep or shuffle certain dices for higher scores.")
 print("you have three try's to get the highest score possible.")
 print("(Made by: Niels van Rheenen, V4D, Het Streek Lyceum.)")
@@ -49,7 +63,7 @@ print("-------------------------------------------------------------------------
 print(" ")
 # Printing the random dices.
 
-hold = input("Do you want to keep your dices. ")
+hold = input("Do you want to keep your dices? ")
 # Asking if the user wants to keep their dices.
 
 turn = 0
@@ -98,7 +112,7 @@ while hold == "no":
 
     print(" ")
     print("------------------------------------------------------------------------------------------")
-    print("These are your final dices")
+    print("These are your final dices:")
     print(currentDices)
     print("------------------------------------------------------------------------------------------")
     print(" ")
