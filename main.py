@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##########################################################################
 # Author        : Niels van Rheenen
 # Goal           : This program can be used to play a simple version of yahtzee.
@@ -157,7 +156,7 @@ if (currentDices.count("1️⃣") == 2 or currentDices.count("2️⃣") == 2 or 
     fullHouse = True
     print("You Have Full House!")
 else: fullHouse = False
-=======
+
 import random
 # Random gets inported here.
 
@@ -302,5 +301,4 @@ if (currentDices.count("1️⃣") == 2 or currentDices.count("2️⃣") == 2 or 
     fullHouse = True
     print("You Have Full House!")
 else: fullHouse = False
->>>>>>> 9b5faecc46a564d7f4aa5dd74c3acf4c1138ea3d
 # Checking for full house
